@@ -1,11 +1,12 @@
 from app import app
-
+from flask import render_template
 
 @app.route('/home')
-def index():
-  return 'Hello World'
+def home():
+  home_page_name = 'Home'
+  return render_template('home.html', home=home_page_name)
 
 @app.route('/register')
-def name():
-  my_name = 'Patrick'
-  return f"Hi {my_name}"
+def register():
+  register_page_name = 'Register'
+  return render_template('register.html', register=register_page_name)
